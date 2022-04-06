@@ -203,17 +203,25 @@ public class Main {
         HumiditySensor humiditySensor = new HumiditySensor();
         PressureSensor pressureSensor = new PressureSensor();
 
+        TemperatureSensor temperatureSensor1 = new TemperatureSensor();
+        HumiditySensor humiditySensor1 = new HumiditySensor();
+        PressureSensor pressureSensor1 = new PressureSensor();
+
         temperatureSensor.addListener(localWeatherStation);
         humiditySensor.addListener(localWeatherStation);
         pressureSensor.addListener(localWeatherStation);
+
+        temperatureSensor1.addListener(localWeatherStation);
+        humiditySensor1.addListener(localWeatherStation);
+        pressureSensor1.addListener(localWeatherStation);
 
         System.out.println("Main: simulating updates from sensors");
         temperatureSensor.update();
         humiditySensor.update();
         pressureSensor.update();
-        temperatureSensor.update();
-        humiditySensor.update();
-        pressureSensor.update();
+        temperatureSensor1.update();
+        humiditySensor1.update();
+        pressureSensor1.update();
 
         System.out.println("Main: displaying report and logs");
         localWeatherStation.displayCurrentWeather();
